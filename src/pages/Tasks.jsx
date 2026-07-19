@@ -17,7 +17,7 @@ const Tasks = () => {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get('http://task-manager-backend-production-8e1a.up.railway.app/api/tasks',
+      const res = await axios.get('https://task-manager-backend-production-8e1a.up.railway.app/api/tasks',
         { withCredentials: true }
       )
       setTasks(res.data)
@@ -29,7 +29,7 @@ const Tasks = () => {
   const handleCreate = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://task-manager-backend-production-8e1a.up.railway.app/api/tasks',
+      await axios.post('https://task-manager-backend-production-8e1a.up.railway.app/api/tasks',
         { title, description, priority, dueDate },
         { withCredentials: true }
       )
@@ -44,7 +44,7 @@ const Tasks = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://task-manager-backend-production-8e1a.up.railway.app/api/tasks/${id}`,
+      await axios.delete(`https://task-manager-backend-production-8e1a.up.railway.app/api/tasks/${id}`,
         { withCredentials: true }
       )
       fetchTasks()
@@ -55,7 +55,7 @@ const Tasks = () => {
 
   const handleComplete = async (id, completed) => {
     try {
-      await axios.patch(`http://task-manager-backend-production-8e1a.up.railway.app/api/tasks/${id}`,
+      await axios.patch(`https://task-manager-backend-production-8e1a.up.railway.app/api/tasks/${id}`,
         { completed: !completed },
         { withCredentials: true }
       )
@@ -66,7 +66,7 @@ const Tasks = () => {
   }
 
   const handleLogout = async () => {
-    await axios.post('http://task-manager-backend-production-8e1a.up.railway.app/logout',
+    await axios.post('https://task-manager-backend-production-8e1a.up.railway.app/logout',
       {},
       { withCredentials: true }
     )

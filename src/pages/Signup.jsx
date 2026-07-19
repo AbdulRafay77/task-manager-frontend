@@ -11,7 +11,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://task-manager-backend-production-8e1a.up.railway.app/signup',
+      await axios.post('https://task-manager-backend-production-8e1a.up.railway.app/signup',
         { email, password },
         { withCredentials: true }
       )
